@@ -1,12 +1,18 @@
-package View;
+package view;
 
 import javax.swing.*;
+
+import controller.AccountListenner;
+import dao.AccountDAO;
+
 import java.awt.*;
 
 public class RegisterPanel extends JPanel {
-	private JTextField textusernameregist;
-	private JTextField textpasswordregist;
-	private JTextField textpasswordcfregist;
+	private JTextField txtRegister;
+	private JPasswordField txtPassword;
+	private JPasswordField txtConfirmPassword;
+
+	private JButton btnRegister;
     public RegisterPanel() {
     	setBackground(new Color(64, 64, 64));
         setLayout(null);
@@ -26,11 +32,11 @@ public class RegisterPanel extends JPanel {
         title.setBounds(228, 85, 194, 30);
         add(title);
         
-        textusernameregist = new JTextField();
-        textusernameregist.setColumns(10);
-        textusernameregist.setBackground(Color.LIGHT_GRAY);
-        textusernameregist.setBounds(176, 156, 312, 24);
-        add(textusernameregist);
+        txtRegister = new JTextField();
+        txtRegister.setColumns(10);
+        txtRegister.setBackground(Color.LIGHT_GRAY);
+        txtRegister.setBounds(176, 156, 312, 24);
+        add(txtRegister);
         
         JLabel lblPassword = new JLabel("Mật Khẩu");
         lblPassword.setHorizontalAlignment(SwingConstants.LEFT);
@@ -39,28 +45,46 @@ public class RegisterPanel extends JPanel {
         lblPassword.setBounds(166, 196, 93, 40);
         add(lblPassword);
         
-        textpasswordregist = new JTextField();
-        textpasswordregist.setColumns(10);
-        textpasswordregist.setBackground(Color.LIGHT_GRAY);
-        textpasswordregist.setBounds(176, 231, 312, 24);
-        add(textpasswordregist);
+        txtPassword = new JPasswordField();
+        txtPassword.setColumns(10);
+        txtPassword.setBackground(Color.LIGHT_GRAY);
+        txtPassword.setBounds(176, 231, 312, 24);
+        add(txtPassword);
+           
+        btnRegister = new JButton("Đăng Ký");
+    
+        btnRegister.setBackground(new Color(255, 128, 0));
+        btnRegister.setBounds(176, 352, 312, 30);
+        add(btnRegister);
         
-        JButton Register_button = new JButton("Đăng Ký");
-        Register_button.setBackground(new Color(255, 128, 0));
-        Register_button.setBounds(176, 352, 312, 30);
-        add(Register_button);
+        txtConfirmPassword = new JPasswordField();
+        txtConfirmPassword.setColumns(10);
+        txtConfirmPassword.setBackground(Color.LIGHT_GRAY);
+        txtConfirmPassword.setBounds(176, 300, 312, 24);
+        add(txtConfirmPassword);
         
-        textpasswordcfregist = new JTextField();
-        textpasswordcfregist.setColumns(10);
-        textpasswordcfregist.setBackground(Color.LIGHT_GRAY);
-        textpasswordcfregist.setBounds(176, 300, 312, 24);
-        add(textpasswordcfregist);
-        
-        JLabel lblXcNhnMt = new JLabel("Xác Nhận Mật Khẩu");
-        lblXcNhnMt.setHorizontalAlignment(SwingConstants.LEFT);
-        lblXcNhnMt.setForeground(Color.WHITE);
-        lblXcNhnMt.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblXcNhnMt.setBounds(166, 265, 172, 40);
-        add(lblXcNhnMt);
+        JLabel lblPasswordAgain = new JLabel("Xác Nhận Mật Khẩu");
+        lblPasswordAgain.setHorizontalAlignment(SwingConstants.LEFT);
+        lblPasswordAgain.setForeground(Color.WHITE);
+        lblPasswordAgain.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblPasswordAgain.setBounds(166, 265, 172, 40);
+        add(lblPasswordAgain);
     }
+	public JTextField getTxtRegister() {
+		return txtRegister;
+	}
+	public JPasswordField getTxtPassword() {
+		return txtPassword;
+	}
+	public JPasswordField getTxtConfirmPassword() {
+		return txtConfirmPassword;
+	}
+	public JButton getBtnRegister() {
+		return btnRegister;
+	}
+	public void setBtnRegister(JButton btnRegister) {
+		this.btnRegister = btnRegister;
+	}
+	
+    
 }

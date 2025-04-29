@@ -2,7 +2,6 @@ package model;
 
 public class Room {
 	private String rID;
-	private int roomNumber;
 	private String roomType;
 	private int floor;
 	private String status;
@@ -11,11 +10,13 @@ public class Room {
 	public Room() {
 		// TODO Auto-generated constructor stub
 	}
-
-	public Room(String rID, int roomNumber, String roomType, int floor, String status, String note) {
+	public Room(String rID) {
+		this.rID = rID;
+	}
+	
+	public Room(String rID, String roomType, int floor, String status, String note) {
 		super();
 		this.rID = rID;
-		this.roomNumber = roomNumber;
 		this.roomType = roomType;
 		this.floor = floor;
 		this.status = status;
@@ -28,14 +29,6 @@ public class Room {
 
 	public void setrID(String rID) {
 		this.rID = rID;
-	}
-
-	public int getRoomNumber() {
-		return roomNumber;
-	}
-
-	public void setRoomNumber(int roomNumber) {
-		this.roomNumber = roomNumber;
 	}
 
 	public String getRoomType() {

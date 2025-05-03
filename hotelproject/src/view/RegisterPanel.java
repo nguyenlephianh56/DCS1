@@ -2,7 +2,7 @@ package view;
 
 import javax.swing.*;
 
-import controller.AccountListenner;
+import controller.AccountListener;
 import dao.AccountDAO;
 
 import java.awt.*;

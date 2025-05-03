@@ -3,7 +3,7 @@ package view;
 import java.awt.*;
 import javax.swing.*;
 
-import controller.AccountListenner;
+import controller.AccountListener;
 import dao.AccountDAO;
 
 public class LoginView {
@@ -66,16 +66,6 @@ public class LoginView {
         btnregisternew.setBackground(new Color(0, 128, 192));
         btnregisternew.setBounds(32, 199, 220, 38);
         panellogin.add(btnregisternew);
-        
-        JButton btnNewButton = new JButton("New button");
-        btnNewButton.setBackground(new Color(255, 0, 0));
-        btnNewButton.setBounds(92, 274, 85, 21);
-        panellogin.add(btnNewButton);
-        
-        Button button = new Button("New button");
-        button.setBackground(new Color(255, 0, 0));
-        button.setBounds(97, 330, 66, 21);
-        panellogin.add(button);
 
         // Panel bên phải sử dụng CardLayout
         cardLayout = new CardLayout();
@@ -95,10 +85,10 @@ public class LoginView {
         btnloginview.addActionListener(e -> cardLayout.show(cardPanel, "login"));
         btnregisternew.addActionListener(e -> cardLayout.show(cardPanel, "register"));
         
-        AccountListenner actionLogin = new AccountListenner(loginPanel, accountDAO, this);
+        AccountListener actionLogin = new AccountListener(loginPanel, accountDAO, this);
         loginPanel.getBtnLogin().addActionListener(actionLogin);
         
-        AccountListenner actionRegister = new AccountListenner(registerPanel, accountDAO);
+        AccountListener actionRegister = new AccountListener(registerPanel, accountDAO);
         registerPanel.getBtnRegister().addActionListener(actionRegister);
     }
 

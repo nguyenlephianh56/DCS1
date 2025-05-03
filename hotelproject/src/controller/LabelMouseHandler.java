@@ -8,6 +8,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
 import dao.RoomDAO;
+import view.CustomerView;
+import view.LoginView;
 import view.MainView;
 import view.RoomView;
 
@@ -29,7 +31,12 @@ public class LabelMouseHandler extends MouseAdapter{
 		switch(action) {
 		case "room": RoomView roomView = new RoomView(mainView, new RoomDAO());
         			roomView.showWindow(); break;
-		case "customer" :
+		case "customer" : CustomerView customerView = new CustomerView();
+		customerView.showWindow(); break;
+		case "exit": mainView.dispose();
+					LoginView loginView = new LoginView();
+					loginView.getFrame().setVisible(true);
+					
 		}
 		
 	}
